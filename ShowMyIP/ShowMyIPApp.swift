@@ -29,6 +29,9 @@ struct ShowMyIPApp: App {
 
             Button("Refresh") {
                 ipFetcher.fetchIPAddress()
+                DispatchQueue.main.async {
+                    NSApp.activate(ignoringOtherApps: true) // Keeps the menu open
+                }
             }
             .keyboardShortcut("r")
 
