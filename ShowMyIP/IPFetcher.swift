@@ -13,7 +13,8 @@ class IPFetcher: ObservableObject {
 
     func fetchIPAddress() {
         print("Starting to fetch IP address...") // Debug log
-        guard let url = URL(string: "http://ifconfig.me") else {
+//        guard let url = URL(string: "https://ifconfig.me/ip") else {
+        guard let url = URL(string: "https://api.ipify.org/?format=text") else {
             DispatchQueue.main.async {
                 self.ipAddress = "Invalid URL"
             }
